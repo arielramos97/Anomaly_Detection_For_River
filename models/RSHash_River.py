@@ -1,16 +1,27 @@
 import numpy as np
 
 class RSHash():
-    """Subspace outlier detection in linear time with randomized hashing :cite:`sathe2016subspace`. This implementation is adapted from `cmuxstream-baselines <https://github.com/cmuxstream/cmuxstream-baselines/blob/master/Dynamic/RS_Hash/sparse_stream_RSHash.py>`_.
-
-        Args:
-            feature_mins (np.float array of shape (num_features,)): Minimum boundary of the features.
-            feature_maxes (np.float array of shape (num_features,)): Maximum boundary of the features.
-            sampling_points (int): The number of sampling points (Default=1000).
-            decay (float): The decay hyperparameter (Default=0.015).
-            num_components (int): The number of ensemble components (Default=100).
-            num_hash_fns (int): The number of hashing functions (Default=1).
     """
+    RSHash Algorithm 
+    
+    Subspace outlier detector based on randomized hashing.
+    
+    Parameters
+    ----------
+    feature_mins
+        Minimum boundary of the features.
+    feature_maxes 
+       Maximum boundary of the features.
+    sampling_points 
+        The number of sampling points.
+    decay
+        The decay hyperparameter.
+    num_components
+        The number of ensemble components.
+    num_hash_fns
+        The number of hashing functions.
+    """
+
 
     def __init__(
             self,

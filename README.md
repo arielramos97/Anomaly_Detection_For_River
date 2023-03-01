@@ -1,4 +1,4 @@
-# Anomaly_Detection_For_River
+# Anomaly Detection For_River
 
 **Python** Benchmarking of the xStream algorithm proposed by the paper:
 

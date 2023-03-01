@@ -6,6 +6,8 @@ class xStream:
 
     '''
     XStream Algorithm
+    
+    Density-based ensemble outlier detection algorithm.
 
     Parameters
     ----------

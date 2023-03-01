@@ -1,12 +1,18 @@
 import numpy as np
 
-
-class LODA:
-    """The LODA model :cite:`pevny2016loda` The implemnetation is adapted to the steraming framework from the `PyOD framework <https://pyod.readthedocs.io/en/latest/_modules/pyod/models/loda.html#LODA>`_.
-
-        Args:
-            num_bins (int): The number of bins of the histogram.
-            num_random_cuts (int): The number of random cuts.
+class LODA():
+    """
+    Lightweight Online Detector of Anomalies
+    
+    Outlier detection algorithm that computes the likelihood of 
+    data points using an ensemble of one-dimensional histograms.
+    
+    Parameters
+    ----------
+    num_bins
+        Number of bins of the histogram.
+    num_random_cuts
+        Number of random cut projections.
     """
 
     def __init__(self, num_bins=10, num_random_cuts=100):
@@ -16,13 +22,6 @@ class LODA:
 
     def learn_one(self, X, y=None):
         """Fits the model to next instance.
-
-        Args:
-            X (np.float array of shape (num_features,)): The instance to fit.
-            y (int): Ignored since the model is unsupervised (Default=None).
-
-        Returns:
-            object: Returns the self.
         """
         if self.to_init:
             self.num_features = X.shape[0]
@@ -56,12 +55,6 @@ class LODA:
 
     def predict_one(self, X):
         """Scores the anomalousness of the next instance.
-
-        Args:
-            X (np.float array of shape (num_features,)): The instance to score. Higher scores represent more anomalous instances whereas lower scores correspond to more normal instances.
-
-        Returns:
-            float: The anomalousness score of the input instance.
         """
         X = X.reshape(1, -1)
 
